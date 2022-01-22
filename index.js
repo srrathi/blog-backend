@@ -21,6 +21,10 @@ mongoose
   .then(() => console.log("MongoDb connected successfully"))
   .catch((err) => console.log(err.message));
 
+app.get("/", (req, res) => {
+  res.send("Welcome to the backend of Blog app");
+});
+
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/posts", postRoutes);
